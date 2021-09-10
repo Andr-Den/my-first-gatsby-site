@@ -1,11 +1,5 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import {
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle
-} from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -20,21 +14,21 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div className="m-auto max-w-screen-xl">
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+      <header className="text-xl text-gray-100 font-bold mt-12">{data.site.siteMetadata.title}</header>
       <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
+        <ul className="flex pl-0 list-none mt-6">
+          <li className="pr-8">
+            <Link to="/" className="text-gray-400">
               Home
             </Link>
           </li>
-          <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
+          <li className="pr-8">
+            <Link to="/about" className="text-gray-400">
               About
             </Link>
           </li>
-          <li className={navLinkItem}>
-            <Link to="/blog" className={navLinkText}>
+          <li className="pr-8">
+            <Link to="/blog" className="text-gray-400">
               Blog
             </Link>
           </li>
